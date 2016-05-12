@@ -73,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * 登录
      *
-     * @param view
      */
     public void login(View view) {
         if (!EaseCommonUtils.isNetWorkConnected(this)) {
