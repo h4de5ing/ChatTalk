@@ -3,13 +3,13 @@
     <item
         android:id="@+id/bottomBarHome"
         android:icon="@drawable/ic_message_white_24dp"
-        android:title="Home"/>
+        android:title="@string/session"/>
     <item
         android:id="@+id/bottomBarTools"
         android:icon="@drawable/ic_person_white_24dp"
-        android:title="Tools"/>
+        android:title="@string/address_book"/>
     <item
         android:id="@+id/bottomBarAbout"
         android:icon="@drawable/ic_settings_white_24dp"
-        android:title="About"/>
+        android:title="@string/setting"/>
 </menu>

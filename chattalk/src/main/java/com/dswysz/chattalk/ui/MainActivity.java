@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, FragmentFactory.getFragment(mCurrentItem)).commit();
+                //getSupportFragmentManager().beginTransaction().add(R.id.fragment, new EaseContactListFragment()).commit();
             }
 
             @Override
