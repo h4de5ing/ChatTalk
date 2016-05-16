@@ -58,7 +58,7 @@ public class DemoHelper {
 
     private EMOptions initChatOptions() {
         EMOptions options = new EMOptions();// 获取到EMChatOptions对象
-        options.setAcceptInvitationAlways(true);// 默认添加好友时，是不需要验证的，改成需要验证
+        options.setAcceptInvitationAlways(false);// 默认添加好友时，需要验证
         options.setRequireAck(true);// 设置是否需要已读回执
         options.setRequireDeliveryAck(false);// 设置是否需要已送达回执
 
@@ -73,7 +73,6 @@ public class DemoHelper {
         //options.allowChatroomOwnerLeave(getModel().isChatroomOwnerLeaveAllowed());
         // options.setDeleteMessagesAsExitGroup(getModel().isDeleteMessagesAsExitGroup());
         // options.setAutoAcceptGroupInvitation(getModel().isAutoAcceptGroupInvitation());
-
         return options;
     }
 

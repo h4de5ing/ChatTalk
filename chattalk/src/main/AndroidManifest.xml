@@ -38,11 +38,15 @@
             android:theme="@style/BaseAppTheme"/>
         <activity
             android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
             android:theme="@style/BaseAppTheme"
-            android:windowSoftInputMode="stateUnchanged|adjustResize"/>
+            android:windowSoftInputMode="stateUnchanged|adjustPan"/>
         <activity
             android:name=".ui.ChatActivity"
-            android:theme="@style/BaseAppTheme"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="adjustResize"/>
         <!-- 设置环信应用的AppKey -->
         <meta-data
             android:name="EASEMOB_APPKEY"

@@ -10,6 +10,7 @@ import com.hyphenate.easeui.ui.EaseConversationListFragment;
 
 /**
  * Create by h4de5ing 2016/5/13 013
+ * 会话列表
  */
 public class ConversateionListFragment extends EaseConversationListFragment {
     @Override

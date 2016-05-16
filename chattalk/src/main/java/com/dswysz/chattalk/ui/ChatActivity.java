@@ -2,11 +2,17 @@ package com.dswysz.chattalk.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.dswysz.chattalk.R;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseBaseActivity;
 import com.hyphenate.easeui.ui.EaseChatFragment;
+
+import java.util.List;
 
 /**
  * Create by h4de5ing 2016/5/13 013
@@ -51,6 +57,10 @@ public class ChatActivity extends EaseBaseActivity {
     @Override
     public void onBackPressed() {
         chatFragment.onBackPressed();
+        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername);
+        List<EMMessage> allMessages = conversation.getAllMessages();
+        EMClient.getInstance().chatManager().importMessages(allMessages);
+        Toast.makeText(ChatActivity.this, "消息已经存入数据库中了..", Toast.LENGTH_SHORT).show();
     }
 
     public String getToChatUsername() {

@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.ui.EaseContactListFragment;
+import com.hyphenate.exceptions.HyphenateException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Create by h4de5ing 2016/5/13 013
+ * 联系人列表
  */
 public class ContactListFragment extends EaseContactListFragment {
     @Override
@@ -34,9 +38,14 @@ public class ContactListFragment extends EaseContactListFragment {
      */
     private static Map<String, EaseUser> getContacts() {
         Map<String, EaseUser> contacts = new HashMap<String, EaseUser>();
-        for (int i = 1; i <= 10; i++) {
-            EaseUser user = new EaseUser("Talk-" + i);
-            contacts.put("Talk-" + i, user);
+        try {
+            List<String> usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
+            for (int i = 1; i <= usernames.size(); i++) {
+                EaseUser user = new EaseUser(usernames.get(i));
+                contacts.put(usernames.get(i), user);
+            }
+        } catch (HyphenateException e) {
+            e.printStackTrace();
         }
         return contacts;
     }
