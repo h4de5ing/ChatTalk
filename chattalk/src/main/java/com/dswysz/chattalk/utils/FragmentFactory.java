@@ -5,7 +5,7 @@ import android.util.SparseArray;
 
 import com.dswysz.chattalk.ui.ContactListFragment;
 import com.dswysz.chattalk.ui.ConversateionListFragment;
-import com.dswysz.chattalk.ui.TestFragment;
+import com.dswysz.chattalk.ui.SettingFragment;
 
 /**
  * Create by h4de5ing 2016/5/12 012
@@ -28,7 +28,7 @@ public class FragmentFactory {
                 fragment = new ContactListFragment();
                 break;
             case 2:
-                fragment = new TestFragment();
+                fragment = new SettingFragment();
                 break;
         }
         map.put(position, fragment);
